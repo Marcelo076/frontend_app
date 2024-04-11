@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Definir o comando para iniciar a aplicação
-CMD ["npm", "run", "dev"]
+CMD npm install && npm run dev
