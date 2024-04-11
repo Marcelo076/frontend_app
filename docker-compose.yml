@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  vue_app:
+ 
+    build:
+      context: .
+      dockerfile: dockerfile 
+    # Exponha a porta 5173 no host e dentro do contêiner
+    ports:
+      - '8080:8080'
+    # Opcionalmente, compartilhe os arquivos locais com o contêiner para desenvolvimento interativo
+    volumes:
+      - ./:/app
+    # Configure a reinicialização automática do contêiner se ele parar
+    restart: unless-stopped
